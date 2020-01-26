@@ -1,0 +1,36 @@
+# Maintainer: Marĉjo GIVENS <marcxjo@cerebralbleach.com>
+pkgname=purple-pulsesms-git
+srcname=purple-pulsesms
+pkgdesc='A Pidgin plugin to support SMS via the web service PulseSMS.'
+url='https://github.com/EionRobb/purple-pulsesms'
+arch=('i686' 'x86_64' 'armv6h')
+pkgver=r13.5347c51
+pkgrel=1
+license=('GPLv3+')
+depends=('libpurple' 'glib2' 'json-glib')
+makedepends=('git')
+source=('purple-pulsesms::git+https://github.com/EionRobb/purple-pulsesms')
+md5sums=('SKIP')
+
+pkgver() {
+	cd $srcdir/$srcname
+	printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}
+
+build() {
+	cd $srcdir/$srcname
+	make
+}
+
+package() {
+	cd $srcdir/$srcname
+	destdir=$pkgdir$(pkg-config --variable plugindir purple)
+	install -Dm755 -t $destdir libpulsesms.so
+
+	icondir=$pkgdir/usr/share/pixmaps/pidgin/protocols
+	echo $icondir
+
+	for size in 16 22 24 48; do
+		install -TDm644 $srcdir/$srcname/pulsesms$size.png $icondir/$size/pulsesms.png
+	done
+}
