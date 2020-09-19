@@ -1,0 +1,32 @@
+# Maintainer: Marĉjo GIVENS <marcxjo@cerebralbleach.com>
+pkgname=purple-mumble-git
+srcname=purple-mumble
+pkgdesc='Mumble protocol plugin for libpurple'
+url='https://bitbucket.org/petteripitkanen/purple-mumble'
+#arch=('i686' 'x86_64' 'armv6h')
+arch=('x86_64')
+pkgver=r48.af338b4
+pkgrel=1
+license=('GPLv3+')
+depends=('libpurple' 'glib2' 'json-glib' 'protobuf-c')
+makedepends=('git')
+provides=("${srcname}")
+conflicts=("${srcname}" "${pkgname}")
+source=('purple-mumble::git+https://bitbucket.org/petteripitkanen/purple-mumble.git')
+md5sums=('SKIP')
+
+pkgver() {
+	cd $srcdir/$srcname
+	printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}
+
+build() {
+	cd $srcdir/$srcname
+	make
+}
+
+package() {
+	cd $srcdir/$srcname
+	destdir=$pkgdir$(pkg-config --variable plugindir purple)
+	install -Dm755 -t $destdir mumble.so
+}
