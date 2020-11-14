@@ -1,0 +1,17 @@
+diff --git a/Makefile b/Makefile
+index 601415e..dd79e9c 100644
+--- a/Makefile
++++ b/Makefile
+@@ -111,10 +111,10 @@ win: $(SDIR)/carbons.c $(BDIR) windeps
+ 	$(WIN_CC) $(WIN_CFLAGS) $(BDIR)/carbons_win.o -o $(BDIR)/carbons.dll $(WIN_LFLAGS)
+ 
+ install: $(BDIR)/carbons.so
+-	install -Dm0644 $(BDIR)/carbons.so $(DESTDIR)$(PURPLE_PLUGIN_DIR)/carbons.so
++	install -Dm0755 $(BDIR)/carbons.so $(DESTDIR)$(PURPLE_PLUGIN_DIR)/carbons.so
+ 
+ install-home: $(BDIR)/carbons.so
+-	install -Dm0644 $(BDIR)/carbons.so $(PURPLE_HOME_PLUGIN_DIR)/carbons.so
++	install -Dm0755 $(BDIR)/carbons.so $(PURPLE_HOME_PLUGIN_DIR)/carbons.so
+ 
+ .PHONY: test
+ test: $(TDIR)/test_carbons.c $(BDIR)

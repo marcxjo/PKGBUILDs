@@ -1,0 +1,42 @@
+# Contributor: Guillaume Hayot <ghayot@postblue.info>
+# Maintainer: Marĉjo Givens <marcxjo@euclidean-7.space>
+
+pkgname=libpurple-carbons-git
+_pkgname=carbons
+pkgver=v0.2.2.r12.ga13cdc9
+pkgrel=1
+pkgdesc='Experimental XEP-0280: Message Carbons plugin for libpurple (Pidgin, Finch, etc.)'
+arch=('i686' 'x86_64')
+url='https://github.com/gkdr/carbons'
+license=('GPL')
+depends=('libpurple' 'libxml2' 'glib2')
+makedepends=('git')
+conflicts=('libpurple-carbons')
+source=("$_pkgname::git+https://github.com/gkdr/carbons.git#branch=dev"
+        '0001-fix-install-permissions.patch')
+sha512sums=('SKIP'
+            'b9b46b2f8dbe87398874bee09c0b0f86022422cfb44bd478841022560cae9e897a4b01081e2d9facfc8a0639656d5e891d873ea7130d40dbd73aa29ffcb4c9be')
+
+pkgver () {
+  cd "$srcdir/$_pkgname"
+  ( set -o pipefail
+    git describe --long --tags 2>/dev/null | sed 's/\([^-]*-g\)/r\1/;s/-/./g' ||
+    printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+  )
+}
+
+prepare() {
+  cd "$srcdir/$_pkgname"
+  patch -p1 < ../0001-fix-install-permissions.patch
+}
+
+build() {
+  cd "$srcdir/$_pkgname"
+  make
+}
+
+package() {
+  cd "$srcdir/$_pkgname"
+  make DESTDIR="$pkgdir" install
+}
+
