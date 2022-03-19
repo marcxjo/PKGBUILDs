@@ -1,0 +1,49 @@
+# Maintainer: Marĉjo Givens <marcxjo@cerebralbleach.com>
+
+_pkgname=stulto
+pkgname=${_pkgname}-git
+pkgver=r34.86f8a2e
+pkgrel=1
+pkgdesc="The Fool's Terminal"
+arch=("i686" "x86_64" "armv5tel" "armv7l")
+url="https://github.com/marcxjo/stulto"
+license=("LGPL")
+depends=("vte3")
+provides=("stulto")
+conflicts=("stulto")
+source=(
+    "${_pkgname}::git+https://github.com/marcxjo/stulto.git"
+    'stulto.desktop'
+)
+sha256sums=(
+    'SKIP'
+    '6aca1d3fd8559214010fe09f341cc2577fbd18f1411e2f38c1dd85e286255747'
+)
+
+pkgver() {
+    cd "${srcdir}/${_pkgname}"
+    printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}
+
+build() {
+    cd "${srcdir}/${_pkgname}"
+
+    make clean
+    make release
+}
+
+package() {
+    cd "${srcdir}/${_pkgname}"
+
+    make DESTDIR="${pkgdir}" prefix=/usr install
+
+    # Create paths for .desktop and config
+    mkdir -p $pkgdir/usr/share/applications/ $pkgdir/usr/share/stulto/
+
+    # Copy .desktop file to package
+    cat $srcdir/stulto.desktop > $pkgdir/usr/share/applications/stulto.desktop
+
+    # Copy default config file
+    cat $srcdir/stulto/stulto.ini \
+        > $pkgdir/usr/share/stulto/stulto.ini
+}
