@@ -4,7 +4,7 @@
 
 _pkgname=stupidterm
 pkgname=${_pkgname}-git
-pkgver=v1.r24.gf824e41
+pkgver=v1.r27.g22ab2d4
 pkgrel=1
 pkgdesc="A Stupid Terminal based on VTE"
 arch=("i686" "x86_64" "armv5tel" "armv7l")
@@ -14,7 +14,7 @@ depends=("vte3")
 conflicts=("stupidterm" "st")
 source=(
     "${_pkgname}::git+https://github.com/esmil/stupidterm.git"
-    'st.desktop'
+    'stupidterm.desktop'
     'allow_bold_is_bright.patch'
     'rename_binary.patch'
 )
@@ -55,7 +55,7 @@ package() {
     mkdir -p $pkgdir/usr/share/applications/ $pkgdir/usr/share/stupidterm/
 
     # Copy .desktop file to package
-    cat $srcdir/st.desktop > $pkgdir/usr/share/applications/st.desktop
+    cat $srcdir/stupidterm.desktop > $pkgdir/usr/share/applications/stupidterm.desktop
 
     # Copy default config file
     cat $srcdir/stupidterm/stupidterm.ini \
