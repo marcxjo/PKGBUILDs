@@ -13,7 +13,7 @@ makedepends=('git' 'meson')
 provides=('stulto')
 conflicts=('stulto')
 source=(
-    "${_pkgname}::git+https://github.com/marcxjo/stulto.git"
+    "${_pkgname}::git+${url}.git"
 )
 sha256sums=(
     'SKIP'
@@ -21,6 +21,7 @@ sha256sums=(
 
 pkgver() {
     cd "${srcdir}/${_pkgname}"
+
     printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
 }
 
