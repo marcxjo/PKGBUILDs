@@ -2,40 +2,35 @@
 
 pkgname=gnome-shell-extension-extension-list
 _pkgname=extension-list
-pkgver=43
+pkgver=44.0
 pkgrel=1
 pkgdesc="A Simple GNOME Shell extension manager in the top panel"
 arch=('any')
 url="https://github.com/tuberry/extension-list"
 license=('GPL3')
 depends=('gnome-shell')
+makedepends=('git' 'meson')
 provides=('gnome-shell-extension-extension-list')
 conflicts=('gnome-shell-extension-extension-list-git')
-source=("${url}/archive/refs/tags/${pkgver}.tar.gz")
-sha256sums=('da5cdb3cdd982d0363d7b9d167f141b0559916d779936ba57b52e10917d6b74d')
+source=("$_pkgname::git+$url#tag=$pkgver")
+sha256sums=('SKIP')
+
+pkgver() {
+  cd "${_pkgname}"
+
+  git describe --tags | sed 's/[^-]*-g/r&/;s/-/+/g'
+}
 
 build() {
-  cd "${srcdir}/${_pkgname}-${pkgver}"
+  cd "$srcdir/$_pkgname"
 
-  make all
+  git submodule update --init --recursive
+
+  meson setup build
 }
 
 package() {
-  cd "${srcdir}/${_pkgname}-${pkgver}"
+  cd "$srcdir/$_pkgname"
 
-  local _uuid=$(grep -Po '(?<="uuid": ")[^"]*' _build/metadata.json)
-  local _destdir="${pkgdir}/usr/share/gnome-shell/extensions/${_uuid}"
-
-  install -Dm644 -t "${_destdir}" README.md "_build"/{metadata.json,*.js,*.css}
-  install -Dm644 -t "${_destdir}/icons" "_build/icons"/*.svg
-  install -Dm644 -t "${pkgdir}/usr/share/glib-2.0/schemas/" ${_uuid}/schemas/*gschema.xml
-  install -Dm644 -t "${pkgdir}/usr/share/licenses/${pkgname}" LICENSE
-
-  if test -d "_build/locale"; then
-    cd "_build/locale"
-    for locale in */
-      do
-        install -Dm644 -t "${pkgdir}/usr/share/locale/${locale}/LC_MESSAGES" "${locale}/LC_MESSAGES"/*.mo
-      done
-  fi
+  meson install -C build --destdir "$pkgdir"
 }
