@@ -1,9 +1,0 @@
-[Desktop Entry]
-Version=1.0
-Name=StupidTerm
-Comment=A Stupid Terminal based on VTE
-Exec=stupidterm
-Icon=utilities-terminal
-Terminal=false
-Type=Application
-Categories=System;TerminalEmulator;
