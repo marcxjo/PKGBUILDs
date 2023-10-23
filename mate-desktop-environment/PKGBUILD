@@ -1,0 +1,48 @@
+# Maintainer: Mark Givens <marcxjo@cerebralbleach.com>
+
+pkgname=mate-desktop-environment
+pkgdesc="Metapackage for a custom MATE desktop environment installation"
+pkgver=0.0.1
+pkgrel=1
+url='https://github.com/marcxjo/PKGBUILDs'
+arch=('any')
+icense=('MIT')
+
+depends=(
+# mate
+'caja'
+'marco'
+'mate-control-center'
+'mate-desktop'
+'mate-icon-theme'
+'mate-menus'
+'mate-notification-daemon'
+'mate-panel'
+'mate-polkit'
+'mate-session-manager'
+'mate-settings-daemon'
+'mate-themes'
+'mate-user-guide'
+
+# mate-extra
+'atril'
+'caja-image-converter'
+'caja-open-terminal'
+'caja-sendto'
+'caja-wallpaper'
+'caja-xattr-tags'
+'engrampa'
+'eom'
+'mate-applets'
+'mate-calc'
+'mate-media'
+'mate-power-manager'
+'mate-screensaver'
+'mate-sensors-applet'
+'mate-system-monitor'
+'mate-terminal'
+'mate-utils'
+'mozo'
+'pluma'
+)
+
