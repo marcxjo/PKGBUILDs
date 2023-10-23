@@ -1,0 +1,61 @@
+# Maintainer: Mark Givens <marcxjo@cerebralbleach.com>
+
+pkgname=gnome-desktop-environment
+pkgdesc="Metapackage for a custom GNOME desktop environment installation"
+pkgver=0.0.1
+pkgrel=1
+url='https://github.com/marcxjo/PKGBUILDs'
+arch=('any')
+license=('MIT')
+
+depends=(
+# gnome
+'eog'
+'epiphany'
+'evince'
+'file-roller'
+'gdm'
+'gnome-backgrounds'
+'gnome-calculator'
+'gnome-calendar'
+'gnome-characters'
+'gnome-clocks'
+'gnome-color-manager'
+'gnome-contacts'
+'gnome-control-center'
+'gnome-font-viewer'
+'gnome-keyring'
+'gnome-menus'
+'gnome-photos'
+'gnome-session'
+'gnome-settings-daemon'
+'gnome-shell'
+'gnome-text-editor'
+'gnome-user-docs'
+'gnome-weather'
+'gvfs'
+'gvfs-goa'
+'gvfs-google'
+'gvfs-mtp'
+'gvfs-nfs'
+'mutter'
+'nautilus'
+'sushi'
+'tracker3-miners'
+'xdg-user-dirs-gtk'
+'yelp'
+
+# gnome-extra
+'dconf-editor'
+'devhelp'
+'ghex'
+'gnome-builder'
+'gnome-devel-docs'
+'gnome-tweaks'
+
+# 'unofficial' additions
+'celluloid'
+'dino'
+'tilix'
+)
+
