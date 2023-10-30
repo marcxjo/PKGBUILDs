@@ -2,7 +2,7 @@
 
 pkgname=xfce-desktop-environment
 pkgdesc="Metapackage for a custom Xfce desktop environment installation"
-pkgver=0.0.1
+pkgver=0.0.2
 pkgrel=1
 url='https://github.com/marcxjo/PKGBUILDs'
 arch=('any')
@@ -38,5 +38,9 @@ depends=(
 
 # Sub in rofi for xfce4-appfinder
 'rofi'
+
+# A few additions from MATE
+'atril'
+'engrampa'
 )
 
