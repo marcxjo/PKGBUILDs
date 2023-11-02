@@ -2,7 +2,7 @@
 
 pkgname=mate-desktop-environment
 pkgdesc="Metapackage for a custom MATE desktop environment installation"
-pkgver=0.0.1
+pkgver=0.0.2
 pkgrel=1
 url='https://github.com/marcxjo/PKGBUILDs'
 arch=('any')
@@ -44,5 +44,30 @@ depends=(
 'mate-utils'
 'mozo'
 'pluma'
+
+# Add rofi for things like window tiling
+'rofi'
+
+# Convenient support for various filesystems
+'gvfs'
+'gvfs-goa'
+'gvfs-google'
+'gvfs-mtp'
+'gvfs-nfs'
+
+# Sigh... needed to support secrets handling for a few apps
+'gnome-keyring'
+
+# Handy in case we change locale
+'xdg-user-dirs-gtk'
+
+# Help doc browser
+'yelp'
+
+# Easy handling of GSettings for the few apps that utilize it
+'dconf-editor'
+
+# Decent browser for C library docs
+'devhelp'
 )
 
