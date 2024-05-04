@@ -2,7 +2,7 @@
 
 pkgname=gnome-desktop-environment
 pkgdesc="Metapackage for a custom GNOME desktop environment installation"
-pkgver=0.0.2
+pkgver=0.0.3
 pkgrel=1
 url='https://github.com/marcxjo/PKGBUILDs'
 arch=('any')
@@ -21,6 +21,7 @@ depends=(
 'gnome-characters'
 'gnome-clocks'
 'gnome-color-manager'
+'gnome-console'
 'gnome-contacts'
 'gnome-control-center'
 'gnome-font-viewer'
