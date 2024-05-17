@@ -2,7 +2,7 @@
 
 pkgname=gnome-desktop-environment
 pkgdesc="Metapackage for a custom GNOME desktop environment installation"
-pkgver=0.0.3
+pkgver=0.0.4
 pkgrel=1
 url='https://github.com/marcxjo/PKGBUILDs'
 arch=('any')
@@ -43,6 +43,8 @@ depends=(
 'nautilus'
 'sushi'
 'tracker3-miners'
+# need this for GNOME light/dark mode switching functionality
+'xdg-desktop-portal-gnome'
 'xdg-user-dirs-gtk'
 'yelp'
 
