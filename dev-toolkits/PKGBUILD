@@ -1,0 +1,27 @@
+# Maintainer: Mark Givens <marcxjo@cerebralbleach.com>
+
+pkgname=dev-toolkits
+pkgdesc="Metapackage of programming language frameworks and SDKs"
+pkgver=0.0.1
+pkgrel=1
+url='https://github.com/marcxjo/PKGBUILDs'
+arch=('any')
+license=('MIT')
+
+depends=(
+# Language SDKs
+# Prioritize multiple-version management where possible
+'dotnet-install' # AUR pkg
+'gvm-git'        # AUR pkg
+'nvm'            # AUR pkg
+'pyenv'
+'rustup'
+
+# Container tech
+'podman'
+'buildah'
+
+# Flatpak
+'flatpak-builder'
+)
+

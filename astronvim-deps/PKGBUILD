@@ -1,0 +1,19 @@
+# Maintainer: Mark Givens <marcxjo@cerebralbleach.com>
+
+pkgname=astronvim-deps
+pkgdesc="Metapackage of software dependencies required to install and run astronvim"
+pkgver=0.0.1
+pkgrel=1
+url='https://github.com/marcxjo/PKGBUILDs'
+arch=('any')
+license=('MIT')
+
+depends=(
+'bottom'
+'gvm-git' # AUR pkg - enables us to pull in gdu (and develop in Go, obv)
+'lazygit'
+'nvm'     # AUR pkg
+'python'
+'ripgrep'
+)
+
