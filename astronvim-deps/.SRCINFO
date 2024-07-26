@@ -1,0 +1,15 @@
+pkgbase = astronvim-deps
+	pkgdesc = Metapackage of software dependencies required to install and run astronvim
+	pkgver = 0.0.2
+	pkgrel = 1
+	url = https://github.com/marcxjo/PKGBUILDs
+	arch = any
+	license = MIT
+	depends = bottom
+	depends = gdu
+	depends = lazygit
+	depends = python
+	depends = ripgrep
+	depends = nvm
+
+pkgname = astronvim-deps

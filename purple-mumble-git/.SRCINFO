@@ -1,0 +1,19 @@
+pkgbase = purple-mumble-git
+	pkgdesc = Mumble protocol plugin for libpurple
+	pkgver = r48.af338b4
+	pkgrel = 1
+	url = https://bitbucket.org/petteripitkanen/purple-mumble
+	arch = x86_64
+	license = GPLv3+
+	makedepends = git
+	depends = libpurple
+	depends = glib2
+	depends = json-glib
+	depends = protobuf-c
+	provides = purple-mumble
+	conflicts = purple-mumble
+	conflicts = purple-mumble-git
+	source = purple-mumble::git+https://bitbucket.org/petteripitkanen/purple-mumble.git
+	md5sums = SKIP
+
+pkgname = purple-mumble-git

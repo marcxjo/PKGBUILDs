@@ -1,0 +1,17 @@
+pkgbase = purple-pulsesms-git
+	pkgdesc = A Pidgin plugin to support SMS via the web service PulseSMS.
+	pkgver = r15.b7991fa
+	pkgrel = 1
+	url = https://github.com/EionRobb/purple-pulsesms
+	arch = i686
+	arch = x86_64
+	arch = armv6h
+	license = GPLv3+
+	makedepends = git
+	depends = libpurple
+	depends = glib2
+	depends = json-glib
+	source = purple-pulsesms::git+https://github.com/EionRobb/purple-pulsesms
+	md5sums = SKIP
+
+pkgname = purple-pulsesms-git

@@ -1,0 +1,26 @@
+pkgbase = mate-applet-dock-git
+	pkgdesc = An application dock applet for the MATE panel
+	pkgver = r352.995c81d
+	pkgrel = 1
+	url = https://github.com/dnk/mate-dock-applet
+	install = mate-applet-dock.install
+	arch = any
+	groups = mate-extra
+	license = GPLv3
+	makedepends = git
+	depends = mate-panel
+	depends = python
+	depends = python-xdg
+	depends = python-cairo
+	depends = python-gobject
+	depends = python-pillow
+	depends = libkeybinder3
+	depends = python-dbus
+	depends = bamf
+	depends = python-distro
+	depends = python-xlib
+	conflicts = mate-applet-dock
+	source = git+http://github.com/dnk/mate-dock-applet
+	md5sums = SKIP
+
+pkgname = mate-applet-dock-git

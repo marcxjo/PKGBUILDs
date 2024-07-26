@@ -1,0 +1,13 @@
+pkgbase = dev-toolkits
+	pkgdesc = Metapackage of tools for modern development and runtime strategies (e.g., sandboxing)
+	pkgver = 0.0.2
+	pkgrel = 1
+	url = https://github.com/marcxjo/PKGBUILDs
+	arch = any
+	license = MIT
+	depends = podman
+	depends = buildah
+	depends = flatpak-builder
+	depends = devbox
+
+pkgname = dev-toolkits

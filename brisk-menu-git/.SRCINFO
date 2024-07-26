@@ -1,0 +1,29 @@
+pkgbase = brisk-menu-git
+	pkgdesc = Modern, efficient menu for the MATE Desktop Environment - Ionic fork
+	pkgver = 0.6.2.r5.g8a9a93f
+	pkgrel = 1
+	url = https://github.com/Ionic/brisk-menu
+	arch = i686
+	arch = x86_64
+	groups = mate-extra
+	license = GPL2
+	makedepends = gnome-common
+	makedepends = gettext
+	makedepends = itstool
+	makedepends = vala>=0.36
+	makedepends = meson
+	makedepends = ninja
+	makedepends = glib2-devel
+	makedepends = git
+	depends = mate-panel
+	depends = libnotify
+	optdepends = mozo: for menu edition
+	optdepends = menulibre: for menu edition
+	provides = brisk-menu=0.6.2
+	conflicts = brisk-menu
+	options = !libtool
+	options = !emptydirs
+	source = brisk-menu::git+https://github.com/Ionic/brisk-menu.git#branch=feature/customizable-icon
+	sha256sums = SKIP
+
+pkgname = brisk-menu-git
