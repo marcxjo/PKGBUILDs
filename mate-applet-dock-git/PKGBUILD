@@ -1,0 +1,40 @@
+# Maintainer: Robin Thompson <robin*dot*thompson99*at*gmail*dot*com>
+_pkgname=mate-dock-applet
+pkgname=mate-applet-dock-git
+pkgver=r352.995c81d
+pkgrel=1
+epoch=
+pkgdesc="An application dock applet for the MATE panel"
+arch=('any')
+url="https://github.com/dnk/mate-dock-applet"
+license=('GPLv3')
+groups=('mate-extra')
+depends=("mate-panel" "python" "python-xdg" "python-cairo" "python-gobject"
+"python-pillow" "libkeybinder3" "python-dbus" "bamf" "python-distro"
+"python-xlib")
+conflicts=("mate-applet-dock")
+makedepends=("git")
+install="mate-applet-dock.install"
+source=("git+http://github.com/dnk/mate-dock-applet")
+md5sums=('SKIP')
+
+pkgver() {
+  cd $_pkgname
+  (
+    set -o pipefail
+    git describe --long --abbrev=7 2>/dev/null | sed 's/\([^-]*-g\)/r\1/;s/-/./g' ||
+    printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short=7 HEAD)"
+  )
+}
+
+build() {
+  cd "$srcdir/mate-dock-applet"
+  autoreconf --install
+  ./configure --prefix=/usr --with-gtk3 --disable-schemas-compile
+  make
+}
+
+package() {
+  cd "$srcdir/mate-dock-applet"
+  make DESTDIR="$pkgdir/" install
+}
