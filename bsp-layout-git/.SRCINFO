@@ -1,0 +1,17 @@
+pkgbase = bsp-layout-git
+	pkgdesc = Dynamic layout management for bspwm with tall, wide, even, tiled, monocle
+	pkgver = 0.0.10.r42.g396e67a
+	pkgrel = 1
+	url = https://github.com/marcxjo/bsp-layout
+	arch = any
+	license = MIT
+	depends = bash
+	depends = bc
+	depends = bspwm
+	depends = git
+	provides = bsp-layout
+	conflicts = bsp-layout
+	source = bsp-layout::git+https://github.com/marcxjo/bsp-layout.git#branch=revert-bc-removal
+	sha256sums = SKIP
+
+pkgname = bsp-layout-git

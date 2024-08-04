@@ -1,0 +1,42 @@
+# Contributor: phanium <$(echo bnhoc2R1QHFxLmNvbQo= | base64 -d)>
+# Contributor: Akshay Nair <phenax5@gmail.com>
+
+_pkgname=bsp-layout
+branch=revert-bc-removal
+pkgname=${_pkgname}-git
+pkgver=0.0.10.r42.g396e67a
+pkgrel=1
+pkgdesc="Dynamic layout management for bspwm with tall, wide, even, tiled, monocle"
+arch=('any')
+url="https://github.com/marcxjo/bsp-layout"
+license=('MIT')
+depends=('bash' 'bc' 'bspwm' 'git')
+provides=('bsp-layout')
+conflicts=('bsp-layout')
+source=("$_pkgname::git+$url.git#branch=${branch}")
+sha256sums=('SKIP')
+
+pkgver() {
+  cd "$_pkgname"
+  ( set -o pipefail
+    git describe --long --tags --abbrev=7 2>/dev/null | sed 's/\([^-]*-g\)/r\1/;s/-/./g' ||
+    printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short=7 HEAD)"
+  )
+}
+
+prepare() {
+  cd "$_pkgname"
+  sed -i 's#{{SOURCE_PATH}}#/usr/lib/bsp-layout#' src/layout.sh
+  sed -i 's#{{VERSION}}#'$pkgver'#' src/layout.sh bsp-layout.1
+}
+
+package() {
+  cd "$_pkgname"
+  install -Dm755 -t "$pkgdir/usr/lib/$_pkgname/" src/layout.sh
+  install -Dm755 -t "$pkgdir/usr/lib/$_pkgname/utils/" src/utils/*.sh
+  install -Dm755 -t "$pkgdir/usr/lib/$_pkgname/layouts/" src/layouts/*.sh
+  install -Dm755 -t "$pkgdir/usr/share/man/man1" bsp-layout.1
+  install -dm755 "$pkgdir/usr/bin"
+  ln -s "/usr/lib/$_pkgname/layout.sh" "$pkgdir/usr/bin/$_pkgname"
+  install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$_pkgname/LICENSE"
+}
