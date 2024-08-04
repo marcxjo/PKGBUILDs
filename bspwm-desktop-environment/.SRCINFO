@@ -1,0 +1,21 @@
+pkgbase = bspwm-desktop-environment
+	pkgdesc = Metapackage for a custom bspwm desktop environment installation
+	pkgver = 0.0.7
+	pkgrel = 1
+	url = https://github.com/marcxjo/PKGBUILDs
+	arch = any
+	license = MIT
+	depends = dunst
+	depends = polybar
+	depends = rofi
+	depends = picom
+	depends = luakit
+	depends = lightdm-gtk-greeter
+	depends = zathura-pdf-poppler
+	depends = bspwm-git
+	depends = sxhkd-git
+	depends = setroot
+	depends = tym
+	depends = stulto-git
+
+pkgname = bspwm-desktop-environment
