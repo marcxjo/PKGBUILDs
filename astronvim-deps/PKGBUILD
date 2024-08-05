@@ -2,7 +2,7 @@
 
 pkgname=astronvim-deps
 pkgdesc="Metapackage of software dependencies required to install and run astronvim"
-pkgver=0.0.2
+pkgver=0.0.3
 pkgrel=1
 url='https://github.com/marcxjo/PKGBUILDs'
 arch=('any')
@@ -12,10 +12,15 @@ depends=(
 'bottom'
 'gdu'
 'lazygit'
+'nodejs'
 'python'
 'ripgrep'
 
-# AUR packages
-'nvm'
+# Fonts for e.g. symbols/ligatures/modern terminal goodness
+'awesome-terminal-fonts'
+'emoji-font'
+'powerline-fonts'
+'ttf-nerd-fonts-symbols'
+'ttf-nerd-fonts-symbols-common'
 )
 
