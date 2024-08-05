@@ -2,14 +2,16 @@
 
 pkgname=bspwm-desktop-environment
 pkgdesc="Metapackage for a custom bspwm desktop environment installation"
-pkgver=0.0.7
+pkgver=0.0.8
 pkgrel=1
 url='https://github.com/marcxjo/PKGBUILDs'
 arch=('any')
 license=('MIT')
 
 depends=(
-# Grabbing these from AUR for now since a release hasn't been tagged in a few years
+# Core applications
+# Grabbing the main bspwm components from AUR for now since a release hasn't
+# been tagged for either in a few years
 #'bspwm'
 #'sxhkd'
 'dunst'
@@ -18,17 +20,38 @@ depends=(
 'picom'
 'luakit'
 
-# TODO: figure out how to log in at SHLVL 2 without a display manager
+# Display manager
+# TODO: figure out how to log in at SHLVL <= 2 without a display manager
 'lightdm-gtk-greeter'
 
-# Simple PDF reader
+# Utility applications (image viewer, document reader, etc.)
+'guvcview'
+'nsxiv'
+'scrot'
+'xcolor'
 'zathura-pdf-poppler'
+
+# Xorg utilities
+'xorg-xrandr'
+'xdotool'
+
+# Fonts for e.g. panel symbols/modern terminal goodness
+'awesome-terminal-fonts'
+'emoji-font'
+'powerline-fonts'
+'ttf-nerd-fonts-symbols'
+'ttf-nerd-fonts-symbols-common'
 
 # AUR packages
 'bspwm-git'
 'sxhkd-git'
+# Background setter
 'setroot'
+# Terminal emulators
 'tym'
 'stulto-git'
+# Font previewer (obv) - this package technically pulls in xdotool and nsxiv,
+# but we also depend on them directly,  hence including them as explicit deps
+'fontpreview'
 )
 
