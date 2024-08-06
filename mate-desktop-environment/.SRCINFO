@@ -1,9 +1,10 @@
 pkgbase = mate-desktop-environment
 	pkgdesc = Metapackage for a custom MATE desktop environment installation
-	pkgver = 0.0.2
+	pkgver = 0.0.3
 	pkgrel = 1
 	url = https://github.com/marcxjo/PKGBUILDs
 	arch = any
+	depends = lightdm-gtk-greeter
 	depends = caja
 	depends = marco
 	depends = mate-control-center
@@ -47,5 +48,6 @@ pkgbase = mate-desktop-environment
 	depends = yelp
 	depends = dconf-editor
 	depends = devhelp
+	depends = guvcview
 
 pkgname = mate-desktop-environment

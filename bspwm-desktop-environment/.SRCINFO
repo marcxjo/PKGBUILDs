@@ -1,10 +1,11 @@
 pkgbase = bspwm-desktop-environment
 	pkgdesc = Metapackage for a custom bspwm desktop environment installation
-	pkgver = 0.0.8
+	pkgver = 0.0.9
 	pkgrel = 1
 	url = https://github.com/marcxjo/PKGBUILDs
 	arch = any
 	license = MIT
+	depends = lightdm-gtk-greeter
 	depends = dunst
 	depends = polybar
 	depends = rofi

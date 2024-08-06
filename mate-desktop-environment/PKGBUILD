@@ -2,13 +2,16 @@
 
 pkgname=mate-desktop-environment
 pkgdesc="Metapackage for a custom MATE desktop environment installation"
-pkgver=0.0.2
+pkgver=0.0.3
 pkgrel=1
 url='https://github.com/marcxjo/PKGBUILDs'
 arch=('any')
 icense=('MIT')
 
 depends=(
+# Display manager
+'lightdm-gtk-greeter'
+
 # mate
 'caja'
 'marco'
@@ -69,5 +72,8 @@ depends=(
 
 # Decent browser for C library docs
 'devhelp'
+
+# Camera viewer
+'guvcview'
 )
 
