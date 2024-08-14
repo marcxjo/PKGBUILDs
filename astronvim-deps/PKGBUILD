@@ -2,13 +2,15 @@
 
 pkgname=astronvim-deps
 pkgdesc="Metapackage of software dependencies required to install and run astronvim"
-pkgver=0.0.3
+pkgver=0.0.4
 pkgrel=1
 url='https://github.com/marcxjo/PKGBUILDs'
 arch=('any')
 license=('MIT')
 
 depends=(
+'neovim'
+
 'bottom'
 'gdu'
 'lazygit'
