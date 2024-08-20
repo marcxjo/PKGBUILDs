@@ -1,6 +1,6 @@
 pkgbase = gnome-desktop-environment
 	pkgdesc = Metapackage for a custom GNOME desktop environment installation
-	pkgver = 0.0.6
+	pkgver = 0.0.7
 	pkgrel = 1
 	url = https://github.com/marcxjo/PKGBUILDs
 	arch = any
@@ -49,5 +49,6 @@ pkgbase = gnome-desktop-environment
 	depends = gnome-tweaks
 	depends = celluloid
 	depends = dino
+	depends = tuba
 
 pkgname = gnome-desktop-environment
