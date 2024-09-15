@@ -1,0 +1,35 @@
+# Maintainer: Mark Givens <marcxjo@cerebralbleach.com>
+
+pkgname=sway-desktop-environment
+pkgdesc="Metapackage for a custom sway-based desktop environment installation"
+pkgver=0.0.1
+pkgrel=1
+url='https://github.com/marcxjo/PKGBUILDs'
+arch=('any')
+license=('MIT')
+
+depends=(
+# Core applications
+'sway'
+'swaybg'
+'swayidle'
+'swaylock'
+'waybar'
+'wofi'
+
+# Miscellaneous QoL stuff (screenshot tool, etc.)
+'sway-contrib'
+
+# Camera viewer
+'guvcview'
+# Image viewer
+'swayimg'
+# pdf reader
+'zathura-pdf-poppler'
+# Simple browser
+'luakit'
+
+# Terminal emulator
+'tym'
+)
+

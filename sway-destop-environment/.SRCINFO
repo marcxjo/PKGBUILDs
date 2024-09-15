@@ -1,0 +1,21 @@
+pkgbase = sway-desktop-environment
+	pkgdesc = Metapackage for a custom sway-based desktop environment installation
+	pkgver = 0.0.1
+	pkgrel = 1
+	url = https://github.com/marcxjo/PKGBUILDs
+	arch = any
+	license = MIT
+	depends = sway
+	depends = swaybg
+	depends = swayidle
+	depends = swaylock
+	depends = waybar
+	depends = wofi
+	depends = sway-contrib
+	depends = guvcview
+	depends = swayimg
+	depends = zathura-pdf-poppler
+	depends = luakit
+	depends = tym
+
+pkgname = sway-desktop-environment
