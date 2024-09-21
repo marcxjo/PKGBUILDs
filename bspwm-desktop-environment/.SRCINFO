@@ -1,6 +1,6 @@
 pkgbase = bspwm-desktop-environment
 	pkgdesc = Metapackage for a custom bspwm desktop environment installation
-	pkgver = 0.0.10
+	pkgver = 0.0.11
 	pkgrel = 1
 	url = https://github.com/marcxjo/PKGBUILDs
 	arch = any
@@ -27,7 +27,7 @@ pkgbase = bspwm-desktop-environment
 	depends = sxhkd-git
 	depends = setroot
 	depends = tym
-	depends = stulto-git
+	depends = bsptab-git
 	depends = fontpreview
 
 pkgname = bspwm-desktop-environment

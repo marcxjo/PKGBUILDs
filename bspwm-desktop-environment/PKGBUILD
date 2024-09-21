@@ -2,7 +2,7 @@
 
 pkgname=bspwm-desktop-environment
 pkgdesc="Metapackage for a custom bspwm desktop environment installation"
-pkgver=0.0.10
+pkgver=0.0.11
 pkgrel=1
 url='https://github.com/marcxjo/PKGBUILDs'
 arch=('any')
@@ -49,7 +49,8 @@ depends=(
 'setroot'
 # Terminal emulators
 'tym'
-'stulto-git'
+# For tabbed window containers
+'bsptab-git'
 # Font previewer (obv) - this package technically pulls in xdotool and nsxiv,
 # but we also depend on them directly,  hence including them as explicit deps
 'fontpreview'
