@@ -1,0 +1,40 @@
+# Maintainer: Mark Givens <marcxjo@cerebralbleach.com>
+
+_reponame=ZQuestClassic
+pkgname=zquest-classic
+pkgver=2.55.7
+pkgrel=1
+pkgdesc="A game eingine for creating games similar to the original NES Zelda"
+arch=('i686' 'x86_64')
+url="http://zeldaclassic.com"
+license=('GPL3' 'custom')
+depends=(
+'gcc-libs' 'libx11' 'glu' 'freeglut' 'mesa' 'libxcursor' 'alsa-lib'
+'gtk3' 'dumb' 'flex' 'bison' 'python-pip' 'ninja' 'openssl-1.1'
+'libcurl-compat' 'libglvnd'
+)
+makedepends=('clang')
+install=$pkgname.install
+source=(
+  "https://github.com/$_reponame/$_reponame/archive/refs/tags/$_reponame-$pkgver.tar.gz"
+)
+sha256sums=(
+  'c94186cb8ec59e0e9dcf3bafeb9ab7de6ac718b6a7912047096eaa3811773a42'
+)
+options=('!strip')
+
+build() {
+  cd "$_reponame-$pkgver"
+
+  cmake -B build -S "$pkgname-$pkgver" \
+      -DCMAKE_BUILD_TYPE='None' \
+      -DCMAKE_INSTALL_PREFIX='/usr' \
+      -Wno-dev
+  cmake --build build
+}
+
+package() {
+  cd "$_reponame-$pkgver"
+
+  DESTDIR="$pkgdir" cmake --install build
+}
