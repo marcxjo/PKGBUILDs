@@ -2,7 +2,7 @@
 
 pkgname=xfce-desktop-environment
 pkgdesc="Metapackage for a custom Xfce desktop environment installation"
-pkgver=0.0.7
+pkgver=0.0.8
 pkgrel=1
 url='https://github.com/marcxjo/PKGBUILDs'
 arch=('any')
@@ -14,6 +14,7 @@ depends=(
 'thunar'
 'thunar-volman'
 'tumbler'
+'xfce4-appfinder'
 'xfce4-panel'
 'xfce4-power-manager'
 'xfce4-session'
@@ -35,6 +36,7 @@ depends=(
 'xfce4-weather-plugin'
 'xfce4-whiskermenu-plugin'
 'xfce4-xkb-plugin'
+'xfce4-docklike-plugin'
 
 # pavucontrol for the pulseaudio panel plugin
 'pavucontrol'
