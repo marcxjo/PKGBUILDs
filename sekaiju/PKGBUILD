@@ -14,7 +14,7 @@ optdepends=('bash-completion: tab completion support')
 source=("${pkgname}-${pkgver}.zip::https://openmidiproject.opal.ne.jp/dlog.php?filename=Sekaiju8.2.zip"
         'Sekaiju.ini')
 sha256sums=('9ad90021ed48fc0438f64b8bfdc9c052d2413db233632e261b864a25bd0178c3'
-            '2b7abef2184c3ad6a4d71b094e68168af90c9fdf3b37d4747706654290b366bb'
+            '121f4c6a752d58fc1f8455a3ebef63eee8f98fe2a880818c1da911a78289f7d3'
 )
 
 prepare(){
