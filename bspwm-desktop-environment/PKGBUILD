@@ -2,7 +2,7 @@
 
 pkgname=bspwm-desktop-environment
 pkgdesc="Metapackage for a custom bspwm desktop environment installation"
-pkgver=0.0.12
+pkgver=0.0.13
 pkgrel=1
 url='https://github.com/marcxjo/PKGBUILDs'
 arch=('any')
@@ -38,11 +38,12 @@ depends=(
 'ttf-nerd-fonts-symbols'
 'ttf-nerd-fonts-symbols-common'
 
+# Background setter
+'xwallpaper'
+
 # AUR packages
 'bspwm-git'
 'sxhkd-git'
-# Background setter
-'setroot'
 # Terminal emulators
 'tym'
 # For tabbed window containers
