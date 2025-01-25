@@ -32,7 +32,6 @@ depends=(
 'xdotool'
 
 # Fonts for e.g. panel symbols/modern terminal goodness
-'awesome-terminal-fonts'
 'emoji-font'
 'powerline-fonts'
 'ttf-nerd-fonts-symbols'
@@ -44,6 +43,8 @@ depends=(
 # AUR packages
 'bspwm-git'
 'sxhkd-git'
+# Background setter
+'xwallpaper'
 # Terminal emulators
 'tym'
 # For tabbed window containers
