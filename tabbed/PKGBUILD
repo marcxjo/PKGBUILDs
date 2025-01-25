@@ -6,7 +6,7 @@
 
 pkgname=tabbed
 pkgver=0.8
-pkgrel=1
+pkgrel=2
 pkgdesc='simple generic tabbed frontend to xembed-aware applications'
 arch=('x86_64')
 url='https://tools.suckless.org/tabbed'
@@ -18,7 +18,7 @@ source=("https://dl.suckless.org/tools/${pkgname}-${pkgver}.tar.gz"
         'config.h')
 sha256sums=('95bdffccb071083068d2b555c2524e9c7c57c9b64494d46c697e678d49a0a3d7'
             '4f726d3c26501dc5a2006d70f14689d287cba27cb64f7ec20b64fba51acc0b95'
-            '0164fe7c437fa61ed61005e068cf9e17725882cd008c6114d79501ebe32bfea8')
+            '492dca22c1c6e968a4d3df13bbf71d3607cbf6cca0133179a98fcc5569011ad9')
 
 prepare() {
   cd "${srcdir}/${pkgname}-${pkgver}"
