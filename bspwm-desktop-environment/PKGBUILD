@@ -3,7 +3,7 @@
 pkgname=bspwm-desktop-environment
 pkgdesc="Metapackage for a custom bspwm desktop environment installation"
 pkgver=0.0.13
-pkgrel=1
+pkgrel=2
 url='https://github.com/marcxjo/PKGBUILDs'
 arch=('any')
 license=('MIT')
