@@ -2,8 +2,8 @@
 
 pkgname=bspwm-desktop-environment
 pkgdesc="Metapackage for a custom bspwm desktop environment installation"
-pkgver=0.0.13
-pkgrel=2
+pkgver=0.0.14
+pkgrel=1
 url='https://github.com/marcxjo/PKGBUILDs'
 arch=('any')
 license=('MIT')
@@ -37,6 +37,9 @@ depends=(
 'ttf-nerd-fonts-symbols'
 'ttf-nerd-fonts-symbols-common'
 
+# Font for custom mpv OSC
+'ttf-material-design-iconic-font'
+
 # Background setter
 'xwallpaper'
 
@@ -52,5 +55,12 @@ depends=(
 # Font previewer (obv) - this package technically pulls in xdotool and nsxiv,
 # but we also depend on them directly,  hence including them as explicit deps
 'fontpreview'
+
+# Rofi menus
+# Note that rofi is also a standalone dependency because we use it for additional
+# capabilities, like drun and window selection
+'rofi-emoji'
+'rofi-nerdy'
+'rofi-power-menu'
 )
 
