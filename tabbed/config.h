@@ -2,9 +2,9 @@
 
 /* appearance */
 static const char font[]        = "source code pro:size=10";
-static const char* normbgcolor  = "#2e3440";
+static const char* normbgcolor  = "#3b4252";
 static const char* normfgcolor  = "#d8dee9";
-static const char* selbgcolor   = "#3b4252";
+static const char* selbgcolor   = "#2e3440";
 static const char* selfgcolor   = "#d8dee9";
 static const char* urgbgcolor   = "#3b4252";
 static const char* urgfgcolor   = "#88c0d0";
