@@ -2,7 +2,7 @@
 
 pkgname=bspwm-desktop-environment
 pkgdesc="Metapackage for a custom bspwm desktop environment installation"
-pkgver=0.0.14
+pkgver=0.0.15
 pkgrel=1
 url='https://github.com/marcxjo/PKGBUILDs'
 arch=('any')
@@ -20,12 +20,17 @@ depends=(
 'picom'
 'luakit'
 
+# Lock screen
+'xsecurelock'
+
 # Utility applications (image viewer, document reader, etc.)
 'guvcview'
 'nsxiv'
 'scrot'
 'xcolor'
 'zathura-pdf-mupdf'
+'jgmenu'
+'nnn'
 
 # Xorg utilities
 'xorg-xrandr'
@@ -43,6 +48,10 @@ depends=(
 # Background setter
 'xwallpaper'
 
+# For mounting remote file systems,
+# since we don't have gvfs in this setup
+'sshfs'
+
 # AUR packages
 'bspwm-git'
 'sxhkd-git'
@@ -52,6 +61,8 @@ depends=(
 'tym'
 # For tabbed window containers
 'bsptab-git'
+# For simple managed layouts
+'bsp-layout-git'
 # Font previewer (obv) - this package technically pulls in xdotool and nsxiv,
 # but we also depend on them directly,  hence including them as explicit deps
 'fontpreview'
@@ -62,5 +73,9 @@ depends=(
 'rofi-emoji'
 'rofi-nerdy'
 'rofi-power-menu'
+
+# Terminal utilities for device management
+'bashmount'
+'bluetui'
 )
 
