@@ -2,7 +2,7 @@
 
 pkgname=sway-desktop-environment
 pkgdesc="Metapackage for a custom sway-based desktop environment installation"
-pkgver=0.0.1
+pkgver=0.0.2
 pkgrel=1
 url='https://github.com/marcxjo/PKGBUILDs'
 arch=('any')
@@ -25,7 +25,7 @@ depends=(
 # Image viewer
 'swayimg'
 # pdf reader
-'zathura-pdf-poppler'
+'zathura-pdf-mupdf'
 # Simple browser
 'luakit'
 
