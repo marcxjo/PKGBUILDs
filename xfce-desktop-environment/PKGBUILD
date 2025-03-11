@@ -2,7 +2,7 @@
 
 pkgname=xfce-desktop-environment
 pkgdesc="Metapackage for a custom Xfce desktop environment installation"
-pkgver=0.0.8
+pkgver=0.0.9
 pkgrel=1
 url='https://github.com/marcxjo/PKGBUILDs'
 arch=('any')
@@ -45,7 +45,7 @@ depends=(
 'rofi'
 
 # A few additions from MATE
-'atril'
+'zathura-pdf-mupdf'
 'engrampa'
 
 # Convenient support for various filesystems
