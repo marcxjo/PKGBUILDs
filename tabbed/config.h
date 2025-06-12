@@ -1,17 +1,17 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const char font[]        = "source code pro:size=10";
-static const char* normbgcolor  = "#3b4252";
-static const char* normfgcolor  = "#d8dee9";
-static const char* selbgcolor   = "#2e3440";
-static const char* selfgcolor   = "#d8dee9";
-static const char* urgbgcolor   = "#3b4252";
-static const char* urgfgcolor   = "#88c0d0";
+static const char font[]        = "JetBrains Mono:size=9";
+static const char* normbgcolor  = "#1d1d1d";
+static const char* normfgcolor  = "#eeeeee";
+static const char* selbgcolor   = "#282828";
+static const char* selfgcolor   = "#eeeeee";
+static const char* urgbgcolor   = "#73cef4";
+static const char* urgfgcolor   = "#eeeeee";
 static const char before[]      = "<";
 static const char after[]       = ">";
 static const char titletrim[]   = "...";
-static const int  tabwidth      = 200;
+static const int  tabwidth      = 128;
 static const Bool foreground    = True;
 static       Bool urgentswitch  = False;
 
