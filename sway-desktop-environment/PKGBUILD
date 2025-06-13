@@ -2,7 +2,7 @@
 
 pkgname=sway-desktop-environment
 pkgdesc="Metapackage for a custom sway-based desktop environment installation"
-pkgver=0.0.2
+pkgver=0.0.3
 pkgrel=1
 url='https://github.com/marcxjo/PKGBUILDs'
 arch=('any')
@@ -17,8 +17,18 @@ depends=(
 'waybar'
 'wofi'
 
+# For status bar modules
+'emoji-font'
+'powerline-fonts'
+'ttf-nerd-fonts-symbols'
+'ttf-nerd-fonts-symbols-common'
+'ttf-material-design-iconic-font'
+
 # Miscellaneous QoL stuff (screenshot tool, etc.)
 'sway-contrib'
+
+# Notification daemon
+'mako'
 
 # Camera viewer
 'guvcview'
@@ -31,5 +41,14 @@ depends=(
 
 # Terminal emulator
 'tym'
+
+# For mounting sftp filesystems
+'sshfs'
+
+# For mounting local filesystems
+'bashmount'
+
+# For connecting bluetooth devices'
+'bluetui'
 )
 
