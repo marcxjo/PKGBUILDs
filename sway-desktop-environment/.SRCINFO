@@ -1,6 +1,6 @@
 pkgbase = sway-desktop-environment
 	pkgdesc = Metapackage for a custom sway-based desktop environment installation
-	pkgver = 0.0.3
+	pkgver = 0.0.4
 	pkgrel = 1
 	url = https://github.com/marcxjo/PKGBUILDs
 	arch = any
@@ -19,7 +19,7 @@ pkgbase = sway-desktop-environment
 	depends = sway-contrib
 	depends = mako
 	depends = guvcview
-	depends = swayimg
+	depends = imv
 	depends = zathura-pdf-mupdf
 	depends = luakit
 	depends = tym
