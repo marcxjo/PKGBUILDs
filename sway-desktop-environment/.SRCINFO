@@ -1,7 +1,7 @@
 pkgbase = sway-desktop-environment
 	pkgdesc = Metapackage for a custom sway-based desktop environment installation
-	pkgver = 0.0.4
-	pkgrel = 2
+	pkgver = 0.0.5
+	pkgrel = 1
 	url = https://github.com/marcxjo/PKGBUILDs
 	arch = any
 	license = MIT
@@ -11,6 +11,7 @@ pkgbase = sway-desktop-environment
 	depends = swaylock
 	depends = waybar
 	depends = wofi
+	depends = inotify-tools
 	depends = emoji-font
 	depends = powerline-fonts
 	depends = ttf-nerd-fonts-symbols
