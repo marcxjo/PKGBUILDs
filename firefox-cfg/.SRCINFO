@@ -1,0 +1,15 @@
+pkgbase = firefox-cfg
+	pkgdesc = Security-focused global configuration for Firefox
+	pkgver = 0.0.1
+	pkgrel = 1
+	epoch = 1
+	url = https://github.com/marcxjo/PKGBUILDS
+	arch = any
+	license = MIT
+	depends = firefox
+	source = autoconfig.js
+	source = firefox.cfg
+	sha256sums = 464607275f20dde40b1732c7270c1e74c06452c6155726544fe2b244b1b7120e
+	sha256sums = b230f97c48bf89a65330413025a5c7aaac4d346a67b491f53d2506552a318a22
+
+pkgname = firefox-cfg

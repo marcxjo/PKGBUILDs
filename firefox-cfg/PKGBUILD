@@ -1,0 +1,24 @@
+# Maintainer: Marko Givens <marcxjo@cerebralbleach.com>
+pkgname=firefox-cfg
+pkgver=0.0.1
+pkgrel=1
+epoch=1
+pkgdesc='Security-focused global configuration for Firefox'
+arch=('any')
+url='https://github.com/marcxjo/PKGBUILDS'
+license=('MIT')
+depends=('firefox')
+source=(
+  "autoconfig.js"
+  "firefox.cfg"
+)
+sha256sums=(
+  '464607275f20dde40b1732c7270c1e74c06452c6155726544fe2b244b1b7120e'
+  'b230f97c48bf89a65330413025a5c7aaac4d346a67b491f53d2506552a318a22'
+)
+
+package() {
+        install -dm755 "${pkgdir}"/usr/lib/firefox/defaults/pref/
+        install -Dm644 "${srcdir}"/autoconfig.js "${pkgdir}"/usr/lib/firefox/defaults/pref/autoconfig.js
+        install -Dm644 "${srcdir}"/firefox.cfg "${pkgdir}"/usr/lib/firefox/firefox.cfg
+}
