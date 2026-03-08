@@ -3,7 +3,7 @@
 pkgname=gnome-desktop-environment
 pkgdesc="Metapackage for a custom GNOME desktop environment installation"
 pkgver=0.0.7
-pkgrel=1
+pkgrel=2
 url='https://github.com/marcxjo/PKGBUILDs'
 arch=('any')
 license=('MIT')
@@ -49,7 +49,6 @@ depends=(
 'yelp'
 
 # gnome-extra
-'cheese'
 'dconf-editor'
 'devhelp'
 'ghex'
