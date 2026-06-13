@@ -1,7 +1,7 @@
 pkgbase = xfce-desktop-environment
 	pkgdesc = Metapackage for a custom Xfce desktop environment installation
 	pkgver = 0.0.9
-	pkgrel = 1
+	pkgrel = 2
 	url = https://github.com/marcxjo/PKGBUILDs
 	arch = any
 	license = MIT
@@ -39,7 +39,6 @@ pkgbase = xfce-desktop-environment
 	depends = engrampa
 	depends = gvfs
 	depends = gvfs-goa
-	depends = gvfs-google
 	depends = gvfs-mtp
 	depends = gvfs-nfs
 	depends = gnome-keyring
