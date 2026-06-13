@@ -1,0 +1,30 @@
+# Maintainer: Your Name <youremail@domain.com>
+_pkgname=pass-fzf
+pkgname="${_pkgname}-git"
+branch='master'
+pkgver=VERSION
+pkgrel=1
+pkgdesc="Fuzzy finder for pass"
+arch=('any')
+url="https://github.com/ficoos/pass-fzf"
+license=('MIT')
+depends=('pass' 'fzf')
+provides=('pass-fzf')
+conflicts=('pass-fzf')
+source=("${_pkgname}::git+${url}.git#branch=${branch}")
+sha256sums=('SKIP')
+
+pkgver() {
+  cd "$_pkgname"
+  ( set -o pipefail
+    git describe --long --tags --abbrev=7 2>/dev/null | sed 's/\([^-]*-g\)/r\1/;s/-/./g' ||
+    printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short=7 HEAD)"
+  )
+}
+
+package() {
+  cd "$_pkgname"
+  install -Dm755 -t "$pkgdir/usr/lib/password-store/extensions/" fzf.bash
+  install -Dm644 -t "$pkgdir/usr/share/doc/$_pkgname/" README.md
+  install -Dm644 -t "$pkgdir/usr/share/licenses/$_pkgname/" LICENSE
+}

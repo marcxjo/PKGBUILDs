@@ -1,0 +1,15 @@
+pkgbase = pass-fzf-git
+	pkgdesc = Fuzzy finder for pass
+	pkgver = VERSION
+	pkgrel = 1
+	url = https://github.com/ficoos/pass-fzf
+	arch = any
+	license = MIT
+	depends = pass
+	depends = fzf
+	provides = pass-fzf
+	conflicts = pass-fzf
+	source = pass-fzf::git+https://github.com/ficoos/pass-fzf.git#branch=master
+	sha256sums = SKIP
+
+pkgname = pass-fzf-git
