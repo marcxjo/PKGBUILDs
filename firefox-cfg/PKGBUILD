@@ -1,7 +1,7 @@
 # Maintainer: Marko Givens <marcxjo@cerebralbleach.com>
 pkgname=firefox-cfg
 pkgver=0.0.1
-pkgrel=2
+pkgrel=3
 epoch=1
 pkgdesc='Security-focused global configuration for Firefox'
 arch=('any')
@@ -14,7 +14,7 @@ source=(
 )
 sha256sums=(
   '464607275f20dde40b1732c7270c1e74c06452c6155726544fe2b244b1b7120e'
-  '599281610a294cb659ebb83bfd43e84e4e63ec9efc2da3a8f70a9af35e7f0338'
+  'ef1ef6324c4b41d859a8d748de584a78b589e41bac3d59202338e2f373ae897c'
 )
 
 package() {
